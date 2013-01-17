@@ -1,0 +1,31 @@
+/* By Jason Sundram 5/2010. This should give us a full-screen canvas. */
+
+html,body {
+    margin:0;
+    padding:0;
+    height:100%; /* needed for container min-height */
+    background:gray;
+    
+    font-family:arial,sans-serif;
+    font-size:small;
+    color:#666;
+}
+
+#scrollbox {
+    width: 400px;
+    overflow: auto; 
+}
+
+canvas#full{
+    position:relative;      /* needed for footer positioning*/
+    margin:0 auto;          /* center, not in IE5 */
+    width:100%;
+    /*width:2000px;*/
+    background:#DDD;
+    
+    height:auto !important; /* real browsers */
+    height:100%;            /* IE6: treaded as min-height*/
+
+    min-height:100%;        /* real browsers */
+
+}
