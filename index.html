@@ -1,24 +1,104 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        
-        <link rel="stylesheet" type="text/css" href="layout.css" />
-        
-        <script type="text/javascript" src="streamgraph.js/deps/processing-1.1.0.min.js"></script>
-        <script type="text/javascript" src="streamgraph.js/src/streamgraph.js"></script>
-        <script type="text/javascript" src="streamgraph.js/src/streamgraph.settings.js"></script>
-        <script type="text/javascript" src="streamgraph.js/src/rect.js"></script>
-        
-        <script type="text/javascript" src="streamgraph.js/examples/data/lastfm.js"></script>
-        
-        <title>Music Associations</title>
-    </head>
-    
-    <body>
-        <!--<canvas id="full" datasrc="test.pjs"></canvas> This doesn't work on Chrome for Mac due to 
-        ticket: https://processing-js.lighthouseapp.com/projects/41284-processingjs/tickets/418
-        -->
-        <h1>Music Associations between Junior Years</h1>
-        <canvas id="full" datasrc="streamgraph.js/src/streamgraph.pjs"></canvas>
-    </body>
-</html>
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Music Associations</title>
+<style>
+
+body {
+  font-family: "helvetica neue", helvetica, arial, sans-serif;
+  margin: auto;
+  position: relative;
+  width: 960px;
+}
+
+button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+</style>
+
+<head></head>
+
+<button onclick="transition()">update</button>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+var n = 10, // number of layers
+    m = 11, // number of samples per layer
+    stack = d3.layout.stack().offset("wiggle"),
+    layers0 = stack(d3.range(n).map(function() { return hardcodeData(m); })),
+    layers1 = stack(d3.range(n).map(function() { return hardcodeData(m); }));
+    /*
+    layers0 = stack(d3.range(n).map(function() { return bumpLayer(m); })),
+    layers1 = stack(d3.range(n).map(function() { return bumpLayer(m); }));
+    */
+
+var width = 960,
+    height = 500;
+
+var x = d3.scale.linear()
+    .domain([0, m - 1])
+    .range([0, width]);
+
+var y = d3.scale.linear()
+    .domain([0, d3.max(layers0.concat(layers1), function(layer) { return d3.max(layer, function(d) { return d.y0 + d.y; }); })])
+    .range([height, 0]);
+
+var color = d3.scale.linear()
+    .range(["#aad", "#556"]);
+
+var area = d3.svg.area()
+    .x(function(d) { return x(d.x); })
+    .y0(function(d) { return y(d.y0); })
+    .y1(function(d) { return y(d.y0 + d.y); });
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+svg.selectAll("path")
+    .data(layers0)
+  .enter().append("path")
+    .attr("d", area)
+    .style("fill", function() { return color(Math.random()); });
+
+function transition() {
+  d3.selectAll("path")
+      .data(function() {
+        var d = layers1;
+        layers1 = layers0;
+        return layers0 = d;
+      })
+    .transition()
+      .duration(2500)
+      .attr("d", area);
+}
+
+function hardcodeData(n) {
+    var a = [], i;
+    for (i = 0; i < n; ++i) a[i] = {x: i, y: Math.random() * 3};
+    return a;
+}
+
+// Inspired by Lee Byron's test data generator.
+function bumpLayer(n) {
+
+  function bump(a) {
+    var x = 1 / (.1 + Math.random()),
+        y = 2 * Math.random() - .5,
+        z = 10 / (.1 + Math.random());
+    for (var i = 0; i < n; i++) {
+      var w = (i / n - y) * z;
+      a[i] += x * Math.exp(-w * w);
+    }
+  }
+
+  var a = [], i;
+  for (i = 0; i < n; ++i) a[i] = 0;
+  for (i = 0; i < 5; ++i) bump(a);
+  a = a.map(function(d, i) { return {x: i, y: Math.max(0, d)}; });
+  return a;
+  //return a.map(function(d, i) { return {x: i, y: Math.max(0, d)}; });
+}
+</script>
