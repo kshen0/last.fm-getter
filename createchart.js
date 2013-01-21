@@ -35,11 +35,47 @@ var vis = d3.select("#chart")
 	.append("svg")
 		.attr("width", width)
 		.attr("height", height);
+	/*
+	.on("mouseover", function mouseover(d, i) {
+		console.log(d3.mouse(this));
+		console.log(d3.select(this))
+		//d3.select("path").style("fill", "red");
+	} );
+*/
 
 vis.selectAll("path")
 		.data(stack(layers))
 	.enter().append("path")
 		.attr("d", function(d) { return area(d.values); })
 		.style("fill", function() { return color(Math.random()); })
+		.on("mouseover", function mouseover(d, i) {
+			console.log(d3.mouse(this));
+			console.log(d3.select(this));
+			var color = d3.select(this).style('fill');
+			var newColor = d3.rgb(color).brighter();
+			d3.select(this).style("fill", newColor);
+		})
+		.on("mouseout", function mouseout(d, i) {
+			var color = d3.select(this).style('fill');
+			var newColor = d3.rgb(color).darker();
+			d3.select(this).style("fill", newColor);
+		})
 	.append("title")
 		.text(function(d) { return d.name; });
+
+function colorLuminance(hex, lum) {
+	// validate hex string
+	hex = String(hex).replace(/[^0-9a-f]/gi, '');
+	if (hex.length < 6) {
+		hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
+	}
+	lum = lum || 0;
+	// convert to decimal and change luminosity
+	var rgb = "#", c, i;
+	for (i = 0; i < 3; i++) {
+		c = parseInt(hex.substr(i*2,2), 16);
+		c = Math.round(Math.min(Math.max(0, c + (c * lum)), 255)).toString(16);
+		rgb += ("00"+c).substr(c.length);
+	}
+	return rgb;
+}
