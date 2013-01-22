@@ -8,10 +8,39 @@ var layers = [{"values": [{"y": 25, "x": 0}, {"y": 32, "x": 1}, {"y": 34, "x": 2
 // key: [month, year] where January is month 0
 var stories = {
 	//[0, 2009]: 'Began using last.fm',
-	"0,2009": 'Began using last.fm',
+	"0,2009": 'Begin using last.fm.',
+	"1,2009": 'Valentine\'s Day comes and goes sans Valentine.',
+	"2,2009": 'Enter a student film festival with my friend Mike Lo. Listen to the first 30 seconds of <i>The Vanishing</i> by Stars at least 100 times during editing.',
+	"3,2009": 'I make a stupid (but funny) Facebook status. It catches the attention of a girl named Miliana.',
+	"4,2009": 'Start hanging out with a bunch of people I went to middle school with.',
+	"5,2009": 'Begin dating Miliana. "Our" song is <i>International Rock Star</i> by Stars.',
+	"6,2009": 'Take a summer class at Otis in LA. Anthem of the summer: <i>West Coast</i> by Coconut Records.',
+	"7,2009": 'Return back to Ellicott City, MD.',
+	"8,2009": 'Senior year of high school starts.',
+	"9,2009": 'SATs, APs, and school stress me out to the max.',
+	"10,2009": 'Break up with Miliana. Stop listening to Stars for a while.',
+	"11,2009": 'Last Christmas with the whole family living at home. My sister Vanessa moves to college the next year.',
+	"0,2010": 'College applications end. Stress levels decrease dramatically.',
+	"1,2010": 'Contract a case of senioritis. Motivation to study goes down.',
+	"2,2010": 'Mentally checked out.',
+	"3,2010": 'Get into Penn. Currently listening to: Metric.',
+	"4,2010": 'Graduate high school. Vitamin C tells me we will always be friends forever.',
+	"5,2010": 'Start rock climbing as a hobby. Hear Mumford and Sons in the rock climbing gym, which means you know they\'ve made it big.',
+	"6,2010": 'Start listening to Stars again. It took that long? That\'s embarassiing.',
+	"8,2010": 'Started at Penn as a Digital Media Design major. Listen to a lot of Arcade Fire the first week of classes.',
+	"4,2011": 'Reunite with my good friend Stacie Lackler, the only person I still talk to from my high school. I guess Vitamin C was wrong. Stacie introduces me to Noah and the Whale.',
+	"5,2011": 'Start work at Dogpatch Films in San Francisco, where I spend half my time making their site and half my time holding a boom.',
+	"8,2011": 'Return to Penn for sophomore year. Beirut\'s <i>The Rip Tide</i> is released and I listen to it nonstop.',
+	"2,2012": 'I hear about Emancipator on a blog. It happens that Emancipator is great background music for coding, and that my most time-intensive CS class is this semester. I spend a lot of time trying to make a cube show up on my screen while listening to Emancpator and Joe Hisaishi.',
+	"4,2012": 'I begin a software internship at Washington Post Labs. Work is a blast, but none of my music is on my work laptop. There\'s basically no data here because I used Pandora, which isn\'t linked to my last.fm account.',
+	"6,2012": 'Begin semester abroad in Dunedin, New Zealand. Listens to Margot spike as my flatmate shows me an album of live recordings I haven\'t heard before. Beach House is popular on long drives across the South Island.',
+	"9,2012": 'I start doing a lot more backpacking as the weather gets better. Joe Hisaishi and The Antlers make great music for this.',
+	"11,2012": 'Winter break. I listen to nothing but Radical Face.',
+	"0,2013": 'Spring semester at Penn. Remember how much work there is; put the Emancipator back on.'
 };
 
 var visiblePopup;
+var storyPopup;
 var tooltipHeight = 20;
 var tooltipWidth = 120;
 var activeStream = null;
@@ -48,7 +77,6 @@ var vis = d3.select("#chart")
 	.append("svg")
 		.attr("width", width)
 		.attr("height", height)
-	.on("click", onCanvasClick);
 
 populateXAxis();
 
@@ -67,20 +95,35 @@ var seekLine = vis.append('line')
 	.attr("y2", 0)
 	.attr("stroke-width", 1)
 	.attr("stroke", "#4557A3");
-seek(25);
+seek(25, 0);
 
-function onCanvasClick(d, i) {
-	seek(d3.mouse(this)[0]);
-}
+$("svg").mousemove(function(event) {
+	seek(event.pageX - 7, event.pageY - 30);
+});
 
-function seek(x) {
+$("path").mousemove(function(event) {
+	console.log(event.pageX);
+});
+
+function seek(x, y) {
 	seekLine
 		.attr("x1", x)	
 		.attr("x2", x);
 
-	var monthAndYear = getMonthAndYear(x);
-	var info = d3.select('#info')
-		.html(stories[monthAndYear.toString()]);
+	var monthAndYear = getMonthAndYear(x).toString();
+	var story = stories[monthAndYear];
+
+	storyPopup = d3.select("#storyTooltip")
+		.html(story)
+		.style("min-height", tooltipHeight + "px")
+		.style("width", 300 + "px")
+
+	var h = $("#storyTooltip").height();
+	var w = $("#storyTooltip").width();
+	storyPopup
+		.style("margin-left", (x - w - 14)+"px") // -9 for padding
+		.style("margin-top", (y - h - 14)+"px")
+		.style("display", "block");
 }
 
 function getMonthAndYear(x) {
@@ -114,29 +157,26 @@ function pathMouseover(d, i) {
 	var color = d3.select(this).style('fill');
 	var newColor = d3.rgb(color).brighter(.3);
 	d3.select(this).style("fill", newColor);
+
 	var x = d3.mouse(this)[0];
 	var y = d3.mouse(this)[1];
-	/*
-	if(x > width - tooltipWidth) {
-		x = x - tooltipWidth;
-	}
-	if(y > height / 2) {
-		y = y - tooltipHeight;
-	}
-	*/
 
-	visiblePopup = d3.select(".popup")
+	visiblePopup = d3.select("#artistTooltip")
 		.html('<div class="artist">' + d.name + '</div>')
 		.style("min-height", tooltipHeight + "px")
 		.style("min-width", tooltipWidth + "px");
 
-	var h = $(".popup").height();
-	var w = $(".popup").width();
+	var h = $("#artistTooltip").height();
+	var w = $("#artistTooltip").width();
 	visiblePopup
 		.style("margin-left", (x - w - 14)+"px") // -9 for padding
 		.style("margin-top", (y - h - 14)+"px")
 		.style("display", "block");
 }
+
+function displayPopup() {
+
+};
 
 function populateXAxis() {
 	var step = width / m;
@@ -175,7 +215,7 @@ function populateXAxis() {
 		vis.append('text')
 			.text(year)
 			.attr("x", x).attr("y", height - 5)
-			.style('font-size', '18pt');
+			.style('font-size', '14pt');
 
 		year++;
 	}

@@ -31,9 +31,22 @@ button {
 	text-align: center;
 }
 
+.storyPopup {
+	position: absolute;
+}
+
 #info {
-	background-color: #000;
 	height: 200px;
+	width: 100%;
+	position: absolute;
+	font-size: 10pt;
+}
+
+
+#info #story {
+	float: left;
+	width: 600px;
+	margin-left: 10px;
 }
 
 #credits {
