@@ -1,7 +1,10 @@
+html {
+	font-family: 'Raleway', 'Helvetica', 'Arial', sans-serif;
+}
 body {
-	font-family: "helvetica neue", helvetica, arial, sans-serif;
 	margin: auto;
 	position: relative;
+	width: 5000px;
   /*width: 960px;*/
 }
 
@@ -11,3 +14,28 @@ button {
 	top: 10px;
 }
 
+
+.popup {
+	background-color: black;
+	color: white;
+	opacity: .65;
+	position: absolute;
+	display: none;
+	padding: 5px;
+
+	-webkit-box-shadow: 0px 0px 2px 0px #000; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+			box-shadow: 0px 0px 2px 0px #000; /* Opera 10.5, IE9+, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+.popup .artist {
+	text-align: center;
+}
+
+#info {
+	background-color: #000;
+	height: 200px;
+}
+
+#credits {
+	float: right;
+}

@@ -28,6 +28,7 @@ def init_array():
 		if rank != 3:
 			name = artist["name"]
 		else:
+			print "joe found"
 			name = 'Joe Hisaishi'
 
 		artist_rank[name] = rank
@@ -41,7 +42,7 @@ def init_array():
 config = {
 	"username": "yellowJumpsuit",
 	"api_key": "2be05c4b50dd8b0b315ca2181feb7b35",
-	"limit": 15,
+	"limit": 25,
 	"period": "overall",
 }
 
@@ -51,6 +52,7 @@ start_year = 2009
 end_year = 2013
 
 init_array()
+print json.dumps(artist_rank)
 
 print json.dumps(all_data)
 
@@ -89,4 +91,5 @@ with con:
 				break
 
 # print
+all_data.reverse()
 print json.dumps(all_data)
