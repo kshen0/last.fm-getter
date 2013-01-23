@@ -4,7 +4,7 @@ html {
 body {
 	margin: auto;
 	position: relative;
-	width: 5000px;
+	width: 3000px;
   /*width: 960px;*/
 }
 
@@ -24,6 +24,7 @@ button {
 	padding: 5px;
 	font-size: 10pt;
 	font-weight: 300;
+	text-align: right;
 
 	-webkit-box-shadow: 0px 0px 2px 0px #000; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
 			box-shadow: 0px 0px 2px 0px #000; /* Opera 10.5, IE9+, Firefox 4+, Chrome 6+, iOS 5 */
@@ -31,6 +32,7 @@ button {
 
 .popup .artist {
 	text-align: center;
+	flex-direction: column-reverse;
 }
 
 .storyPopup {
@@ -38,19 +40,10 @@ button {
 }
 
 #info {
-	height: 200px;
+	height: 100px;
 	width: 100%;
-	position: absolute;
 	font-size: 10pt;
+	margin: 10px 0 0 5px;
 }
 
 
-#info #story {
-	float: left;
-	width: 600px;
-	margin-left: 10px;
-}
-
-#credits {
-	float: right;
-}
