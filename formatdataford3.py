@@ -42,7 +42,7 @@ def init_array():
 config = {
 	"username": "yellowJumpsuit",
 	"api_key": "2be05c4b50dd8b0b315ca2181feb7b35",
-	"limit": 25,
+	"limit": 40,
 	"period": "overall",
 }
 
