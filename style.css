@@ -14,6 +14,10 @@ button {
 	top: 10px;
 }
 
+#soundbutton {
+	margin-left: 5px;
+}
+
 
 .popup {
 	background-color: black;
@@ -44,6 +48,10 @@ button {
 	width: 100%;
 	font-size: 10pt;
 	margin: 10px 0 0 5px;
+}
+
+#info #lastfm-link {
+	cursor: default;
 }
 
 .axis {

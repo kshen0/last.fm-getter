@@ -414,3 +414,15 @@ function populateXAxis() {
 	}
 }
 
+function toggleSound() {
+	if(audioOn) {
+		$('#audioplayer1')[0].pause();
+		$('#soundbutton').attr("src", "./img/nosound.png");
+		audioOn = false;
+	}
+	else {
+		$('#audioplayer1')[0].play();
+		$('#soundbutton').attr("src", "./img/sound.png");
+		audioOn = true;
+	}
+}
