@@ -11,23 +11,23 @@ var stories = {
 	"0,2009": 'Begin using last.fm. I am a junior in high school.',
 	"1,2009": 'Listen to a lot of Portugal. The Man. They remind me of physics class.',
 	"2,2009": 'Enter a student film festival with my friend Mike Lo. Listen to the first 30 seconds of <i>The Vanishing</i> by Stars at least 100 times during editing.',
-	"3,2009": 'Start hanging out with a bunch of people I went to middle school with. These friends become some of the only people I keep in touch with during college.',
+	"3,2009": 'Start hanging out with a bunch of people I went to middle school with. These friends become some of the few people I keep in touch with during college.',
 	"4,2009": 'My highest monthly play count for the band Metric occurs. Buy tickets to see them next month; my first real concert.',
-	"5,2009": 'Begin dating a girl named Miliana. "Our" song is <i>International Rock Star</i> by Stars.',
+	"5,2009": 'Begin dating a girl. "Our" song is <i>International Rock Star</i> by Stars.',
 	"6,2009": 'Take a summer class at Otis in LA. Anthem of the summer: <i>West Coast</i> by Coconut Records.',
 	"7,2009": 'Return home to Ellicott City, MD.',
 	"8,2009": 'Senior year of high school starts.',
 	"9,2009": 'SATs, APs, and college applications stress me out. Muse seems to be the coping mechanism.',
-	"10,2009": 'Break up with Miliana. Listen to Stars a bunch, then stop listening to Stars for a while.',
+	"10,2009": 'Break up with said girl. Listen to Stars a bunch, then stop listening to Stars for a while.',
 	"11,2009": 'Last Christmas while living at home.',
 
 	"0,2010": 'College applications end. Stress levels decrease dramatically.',
 	"1,2010": 'My music player lives on shuffle, so I have no consistent trends for a month.',
-	"2,2010": 'Beach House gets a lot of attention, as do Margot and Metric.',
+	"2,2010": 'My friend Maura gives me a mix tape. My favorite track on it is <i>Take Care</i> by Beach House, which I play about twice a day. The mix CD is still in my car.',
 	"3,2010": 'Get into Penn. Go to prom(s).',
-	"4,2010": 'Graduate high school. Vitamin C tells me we will always be friends forever.',
+	"4,2010": 'Graduate high school. Vitamin C tells me we will always be friends forever. Play a lot of video games with my friends; we are dubbed the \'HoN Team\'.',
 	"5,2010": 'Start rock climbing as a hobby. Hear about Mumford and Sons from a friend from Otis and think I\'m hip, then hear them a few weeks later at the climbing gym. Disappointed I\'m not hip.',
-	"6,2010": 'Start listening to Stars again. It took that long? That\'s embarassing. As Tall As Lions, a previous favorite, disappear from my listening history.',
+	"6,2010": 'Start listening to Stars again. It took that long? That\'s embarassing. As Tall As Lions, a previous favorite, disappears from my listening history.',
 	"7,2010": 'Work up the courage to ask out the girl I like. A month before we go to college. Five hours apart.',
 	"8,2010": 'Start at Penn as a Digital Media Design major. Listen to a lot of Arcade Fire the first week of classes.',
 	"9,2010": 'The month of concerts: I see Stars and Margot back to back, followed by Local Natives and Ingrid Michaelson two weeks later.', 
@@ -36,36 +36,90 @@ var stories = {
 
 	"0,2011": 'Spring semester of freshman year starts. Life is strange in the Quad. Listening habits remain pretty much consistent.',
 	"1,2011": 'Begin applying for summer internships. Have little luck.',
-	"2,2011": 'Now playing: You\'re the One That I Want by Angus & Julia Stone',
+	"2,2011": 'Current obsession: You\'re the One That I Want by Angus & Julia Stone',
 	"3,2011": 'Music plays go down as work picks up.',
 	"4,2011": 'Reunite with my good friend Stacie Lackler, the only person I still talk to from my high school. She introduces me to Noah and the Whale.',
 	"5,2011": 'Start work at Dogpatch Films in San Francisco, where I spend half my time making their website and half my time holding a boom.',
 	"6,2011": 'Anthem of the summer: <i>No Children</i> by The Mountain Goats.',
 	"7,2011": 'End my internship with an intense hatred for cross-browser compatibility.',
-	"8,2011": 'Return to Penn for sophomore year. Beirut\'s <i>The Rip Tide</i> is released and I listen to it nonstop.',
-	"9,2011": 'Meet the new freshman DMD class at a Halloween party.',
+	"8,2011": 'Return to Penn for sophomore year. Now <i>really</i> into Noah and the Whale.',
+	"9,2011": 'Meet the new freshman DMD class at a Halloween party. Feel old. I get Beirut\'s recently released <i>The Rip Tide</i> and listen to it nonstop.',
 	"10,2011": 'Compete in my first PennApps. We make "Pandora for beer".',
 	"11,2011": 'Spend a lot of time modeling the ship <i>Serenity</i> for 3D modeling. Smooth listening like Joe Hisaishi and Radical Face make a resurgence.',
 
 	"0,2012": 'Spring semester of sophomore year starts. Hack in my second PennApps.',
 	"1,2012": 'Discover Walk off the Earth; listen to 3 of their covers a total of 180 combined times in one month.',
-	"2,2012": 'Now playing: Noah and the Whale',
-	"3,2012": 'I spend a lot of time trying to programmatically draw a cube on my screen in CIS 277. I spend all my time programming with Emancipator or Joe Hisaishi on in the background.',
-	"4,2012": 'Begin a software internship at Washington Post Labs. Work is a blast, but none of my music is on my work laptop. There\'s basically no data here because I used Pandora, which isn\'t linked to my last.fm account.',
+	"2,2012": 'I spend a lot of time trying to programmatically draw a cube on my screen in CIS 277. I spend all my time programming with Emancipator or Joe Hisaishi on in the background.',
+	"3,2012": 'Busiest semester yet nears completion.',
+	"4,2012": 'Begin a software internship at Washington Post Labs. Margot, statistically my #2 band of all time, gets a single, solitary play.',
 	"5,2012": 'Split my time between DC and Maryland. Of Monsters and Men reminds me of the DC metro.',
 	"6,2012": 'Begin semester abroad in Dunedin, New Zealand. Listens to Margot spike as my flatmate shows me an album of live recordings I haven\'t heard before.',
 	"7,2012": 'Visit Australia for a week. Get caught in a snowstorm on top of Mount Wellington.',
-	"8,2012": 'Beach House is popular on long drives across the South Island.',
+	"8,2012": 'Drive 8 hours from Dunedin to Kaikoura for a seafood festival. Listen to The National the entire way back.',
 	"9,2012": 'Spend the best 3 days of my life climbing and lazing in Wanaka. A couchsurfer named Henry sings a very good rendition of <i>Just A Boy</i> and rekindles my interest in Angus & Julia Stone.',
 	"10,2012": 'Backpacking the North and South islands. Joe Hisaishi and The Antlers help me fall asleep in hostels.',
-	"11,2012": 'Winter break. I listen to nothing but Radical Face and Lana Del Rey. No regrets.',
+	"11,2012": 'Return to the US. Ecstatic to see friends from home over winter break. I listen to nothing but Radical Face and Lana Del Rey. No regrets.',
 	"0,2013": 'Spring semester of junior year begins at Penn.',
 };
 
+var songs = {
+	"0,2009": null,
+	"1,2009": ['Shade.mp3', 'Shade', 'Portugal. The Man'],
+	"2,2009": ['TheVanishing.mp3', 'The Vanishing', 'Stars'],
+	"3,2009": null, 
+	"4,2009": ['GimmeSympathy.mp3', 'Gimme Sympathy', 'Metric'],
+	"5,2009": ['InternationalRockStar.mp3', 'International Rock Star', 'Stars'],
+	"6,2009": ['WestCoast.mp3', 'West Coast,', 'Coconut Records'],
+	"7,2009": null, 
+	"8,2009": null, 
+	"9,2009": ['Starlight.mp3', 'Starlight', 'Muse'],
+	"10,2009": null,
+	"11,2009": null, 
+
+	"0,2010": null,
+	"1,2010": null, 
+	"2,2010": ['TakeCare.mp3', 'Take Care', 'Beach House'],
+	"3,2010": null, 
+	"4,2010": null, 
+	"5,2010": ['LittleLionMan.mp3', 'Little Lion Man', 'Mumford and Sons'],
+	"6,2010": ['SongForLuna.mp3', 'Song for Luna', 'As Tall As Lions'],
+	"7,2010": null, 
+	"8,2010": ['Laika.mp3', 'Neighborhood 2 - Laika', 'Arcade Fire'],
+	"9,2010": ['FarAway.mp3', 'Far Away', 'Ingrid Michaelson'],
+	"10,2010": ['SkeletonKey.mp3', 'Skeleton Key', 'Margot & The Nuclear So & So\'s'],
+	"11,2010": null, 
+
+	"0,2011": null, 
+	"1,2011": null, 
+	"2,2011": ['YoureTheOneThatIWant.mp3', 'You\'re The One That I Want', 'Angus & Julia Stone'], 
+	"3,2011": null, 
+	"4,2011": ['GiveALittleLove.mp3', 'Give a Little Love', 'Noah and The Whale'], 
+	"5,2011": null, 
+	"6,2011": null, 
+	"7,2011": null, 
+	"8,2011": null, 
+	"9,2011": ['SantaFe.mp3', 'Santa Fe', 'Beirut'],
+	"10,2011": null, 
+	"11,2011": ['PrincessMononoke.mp3', 'Princess Mononoke', 'Joe Hisaishi'], 
+
+	"0,2012": null, 
+	"1,2012":  ['SomebodyThatIUsedToKnow.mp3', 'Somebody That I Used To Know', 'Walk off the Earth'],
+	"2,2012": ['Fires.mp3', 'Soon It Will Be Cold Enough To Build Fires', 'Emancipator'],
+	"3,2012": null, 
+	"4,2012": null, 
+	"5,2012": ['YourBones.mp3', 'Your Bones', 'Of Monsters and Men'],
+	"6,2012": null, 
+	"7,2012": null, 
+	"8,2012": ['BloodbuzzOhio.mp3', 'Bloodbuzz Ohio', 'The National'],
+	"9,2012": ['JustABoy.mp3', 'Just A Boy', 'Angus & Julia Stone'],
+	"10,2012": ['Wake.mp3', 'Wake', 'The Antlers'], 
+	"11,2012": ['DarkParadise.mp3', 'Dark Paradise', 'Lana del Rey'],
+	"0,2013": null, 
+};
 var visiblePopup;
 var storyPopup;
 var tooltipHeight = 20;
-var tooltipWidth = 120;
+var tooltipWidth = 200;
 var storyTooltipWidth = 200;
 var storyTooltipHeight = 20;
 var hoverOffset = 7; 
@@ -74,6 +128,10 @@ var hoveredStream = null;
 var startYear = 2009;
 var artistIndex = {};
 var lastHoveredArtistName;
+var activeDate = null;
+var audioOn = true;
+var activeAudio = $("#audioplayer1");
+var inactiveAudio = $("#audioplayer2");
 
 // compute artist ranks
 for (var i = 0; i < layers.length; i++){ 
@@ -88,10 +146,10 @@ var width = 3500,
 		my = 1500;
 
 var color = d3.scale.linear()
-		.range(["#aad", "#556"]);
+		.range(["#aad", "#555"]);
 
 var stack = d3.layout.stack()
-		.offset("wiggle")
+		.offset("silhouette")
 		.values(function(d) { return d.values; });
 
 var area = d3.svg.area()
@@ -118,7 +176,7 @@ populateXAxis();
 // insert title
 vis.append('text')
 	//.text("the musical associations of kevin shen")
-	.text("kevin shen's top 40 and what they mean")
+	.text("the meaning of kevin shen's top 40")
 	.attr("x", 5).attr("y", 25)
 	.style('font-size', '18pt')
 
@@ -142,6 +200,16 @@ seek(25, 0);
 
 $("svg").mousemove(function(event) {
 	seek(event.pageX, event.pageY);
+
+	//console.log(Number($(window).scrollLeft() - 9));
+	if(event.pageX < (Number($(window).scrollLeft()))+ 50) {
+		$(window).scrollLeft((Number($(window).scrollLeft()) - 9));
+	}
+
+	if(event.pageX > $(window).width() + (Number($(window).scrollLeft()))- 50) {
+		//$(window).scrollLeft((Number($(window).scrollLeft())+600+'px'));
+		$(window).scrollLeft((Number($(window).scrollLeft()) + 9));
+	}
 });
 
 
@@ -151,6 +219,27 @@ function seek(x, y) {
 		.attr("x2", x - hoverOffset);
 
 	var monthAndYear = getMonthAndYear(x).toString();
+
+/*
+	// entered into new month; change the song
+	if(monthAndYear != activeDate) {
+		console.log('new month');
+		// fade out old sound
+//			activeAudio.animate({volume: 0}, 1000);
+		activeDate = monthAndYear;
+
+		// play sound
+		var audio = songs[monthAndYear];
+		if(audio != null && audioOn) {
+			inactiveAudio.animate({volume: 100}, 3000);
+			inactiveAudio.html("<source src='./music/" + audio[0] + "' type='audio/mpeg'/>");
+			//activeAudio[0].play();
+			var temp = inactiveAudio;
+			inactiveAudio = activeAudio;
+			activeAudio = temp;
+		}
+	}
+	*/
 	var story = stories[monthAndYear];
 
 	storyPopup = d3.select("#storyTooltip")
@@ -180,6 +269,24 @@ function seek(x, y) {
 		.style("margin-top", (y - h - yOffset*3 - 1)+"px")
 		.style("display", "block")
 		.style("text-align", textAlign);
+
+	// entered into new month; change the song
+	if(monthAndYear != activeDate) {
+		var audioplayer = $('#audioplayer1');
+		var audio = songs[monthAndYear];
+
+		if (audio == null) {
+			audioplayer[0].pause();
+			return;
+		}
+
+		activeDate = monthAndYear;
+		// play sound
+		if(audioOn) {
+			audioplayer.html("<source src='./music/" + audio[0] + "' type='audio/mpeg'/>");
+			audioplayer[0].play();
+		}
+	}
 }
 
 function getMonthAndYear(x) {
@@ -187,6 +294,7 @@ function getMonthAndYear(x) {
 	var monthsSinceBeginning = parseInt(x / monthWidth);
 	var year = startYear + parseInt(monthsSinceBeginning / 12);
 	var month = parseInt(monthsSinceBeginning % 12);
+
 	return [month, year];
 }
 
@@ -269,99 +377,6 @@ function renderArtistTooltip(x, y) {
 		.style("display", "block");
 
 }
-/*
-$("path").mousemove(function(event) {
-	if(hoveredStream == null) { return; }
-
-	var x = event.pageX; 
-	var y = event.pageY; 
-	var h = $("#artistTooltip").height();
-	var w = $("#artistTooltip").width();
-	var xOffset = 18;
-	var yOffset = 14;
-
-	// if we are near the left edge, flip tooltip to right side of cursor
-	if(w > x) {
-		x += w;
-		//xOffset = -1*xOffset;
-		xOffset = 0;
-	}
-	// if near top, flip to bottom side of cursor
-	if(h > y) {
-		y += h;
-		yOffset = -1*yOffset;
-	}
-
-	var date = getMonthAndYear(x); 
-	var i = (date[1] - startYear) * 12 + date[0];
-	var plays = layers[artistIndex[lastHoveredArtistName]]["values"][i]["y"];
-
-
-	visiblePopup = d3.select("#artistTooltip")
-		.html('<div class="artist">' + lastHoveredArtistName + '</div>' +
-				'<div>' + plays + " plays" + '</div>')
-		.style("min-height", h + "px")
-		.style("width", w + "px");
-
-	visiblePopup
-		.style("margin-left", (x - w - xOffset)+"px") // -9 for padding
-		.style("margin-top", (y - h - yOffset)+"px")
-		.style("display", "block");
-});
-
-function pathMouseOut(d, i) {
-	var color = d3.select(this).style('fill');
-	var newColor = d3.rgb(color).darker(.3);
-	d3.select(this).style("fill", newColor);
-	visiblePopup.style("display", "none");
-	hoveredStream = null;
-}
-
-function pathMouseover(d, i) {
-	var color = d3.select(this).style('fill');
-	var newColor = d3.rgb(color).brighter(.3);
-	hoveredStream = d3.select(this).style("fill", newColor);
-
-	var xOffset = 14;
-	var yOffset = 14;
-
-	var x = d3.mouse(this)[0];
-	var y = d3.mouse(this)[1];
-
-	lastHoveredArtistName = d.name;
-
-	// if we are near the left edge, flip tooltip to right side of cursor
-	if(tooltipWidth > x) {
-		x += tooltipWidth;
-		//xOffset = -1*xOffset;
-		xOffset = 0;
-	}
-	// if near top, flip to bottom side of cursor
-	if(tooltipHeight > y) {
-		y += tooltipHeight;
-		yOffset = -1*yOffset;
-	}
-
-	// get # of plays for this artist during this month
-	var date = getMonthAndYear(x); 
-	var i = (date[1] - startYear) * 12 + date[0];
-	var plays = layers[artistIndex[d.name]]["values"][i]["y"];
-
-	// insert html
-	visiblePopup = d3.select("#artistTooltip")
-		.html('<div class="artist">' + d.name + '<br>' + plays + ' plays' + '</div>')
-		.style("min-height", tooltipHeight + "px")
-		.style("min-width", tooltipWidth + "px");
-
-	// adjust margins to position near cursor
-	var h = $("#artistTooltip").height();
-	var w = $("#artistTooltip").width();
-	visiblePopup
-		.style("margin-left", (x - w - xOffset) + "px") 
-		.style("margin-top", (y - h + yOffset) + "px")
-		.style("display", "block");
-}
-*/
 
 function populateXAxis() {
 	var step = width / m;
@@ -387,20 +402,6 @@ function populateXAxis() {
 			.attr('class', 'date-div')
 			.html(months[month])
 			.style('width', step + 'px')
-		//printMonth = false;
-		/*
-		// print every other month directly to svg element
-		if(printMonth) {
-			vis.append('text')
-				.text(months[month])
-				.attr("x", x).attr("y", height - 30)
-				.style('font-size', '10pt');
-			printMonth = false;
-		}
-		else {
-			printMonth = true;
-		}
-		*/
 		month = (month + 1) % 12;
 	}
 
@@ -411,16 +412,5 @@ function populateXAxis() {
 			.html(year)
 			.style('width', yearStep + 'px');
 	}
-	// print years to svg element
-	/*
-	var yearStep = width / (49 / 12);  //width / number of years 
-	for(var x = 0; x < width; x += yearStep) {
-		vis.append('text')
-			.text(year)
-			.attr("x", x).attr("y", height - 5)
-			.style('font-size', '12pt')
-
-		year++;
-	}
-	*/
 }
+
