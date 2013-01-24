@@ -8,8 +8,8 @@ var layers = [{"values": [{"y": 0, "x": 0}, {"y": 0, "x": 1}, {"y": 43, "x": 2},
 // key: [month, year] where January is month 0
 var stories = {
 	//[0, 2009]: 'Began using last.fm',
-	"0,2009": 'Begin using last.fm.',
-	"1,2009": 'Listening to a lot of Portugal. The Man. They remind me of physics class.',
+	"0,2009": 'Begin using last.fm. I am a junior in high school.',
+	"1,2009": 'Listen to a lot of Portugal. The Man. They remind me of physics class.',
 	"2,2009": 'Enter a student film festival with my friend Mike Lo. Listen to the first 30 seconds of <i>The Vanishing</i> by Stars at least 100 times during editing.',
 	"3,2009": 'Start hanging out with a bunch of people I went to middle school with. These friends become some of the only people I keep in touch with during college.',
 	"4,2009": 'My highest monthly play count for the band Metric occurs. Buy tickets to see them next month; my first real concert.',
@@ -24,33 +24,33 @@ var stories = {
 	"0,2010": 'College applications end. Stress levels decrease dramatically.',
 	"1,2010": 'My music player lives on shuffle, so I have no consistent trends for a month.',
 	"2,2010": 'Beach House gets a lot of attention, as do Margot and Metric.',
-	"3,2010": 'Get into Penn. Go to prom(s). Listening to tons of Eisley, which surprises me because I remember listening to a lot of techno at this time.',
+	"3,2010": 'Get into Penn. Go to prom(s).',
 	"4,2010": 'Graduate high school. Vitamin C tells me we will always be friends forever.',
 	"5,2010": 'Start rock climbing as a hobby. Hear about Mumford and Sons from a friend from Otis and think I\'m hip, then hear them a few weeks later at the climbing gym. Disappointed I\'m not hip.',
 	"6,2010": 'Start listening to Stars again. It took that long? That\'s embarassing. As Tall As Lions, a previous favorite, disappear from my listening history.',
 	"7,2010": 'Work up the courage to ask out the girl I like. A month before we go to college. Five hours apart.',
 	"8,2010": 'Start at Penn as a Digital Media Design major. Listen to a lot of Arcade Fire the first week of classes.',
 	"9,2010": 'The month of concerts: I see Stars and Margot back to back, followed by Local Natives and Ingrid Michaelson two weeks later.', 
-	"10,2010": 'My friends agree Margot\'s new sound isn\'t as good as their first album; the most pretentious statement ever thought up by a couple of 18-year olds is made',
+	"10,2010": 'My friends agree Margot\'s new sound isn\'t as good as their first album; the most pretentious statement ever thought up by a couple of 18-year olds is made.',
 	"11,2010": 'Get grades back for first semester. Realize I\'m now a small fish in a big pond.',
 
-	"0,2011": 'Life is strange in the Quad. Listening habits remain pretty much consistent.',
+	"0,2011": 'Spring semester of freshman year starts. Life is strange in the Quad. Listening habits remain pretty much consistent.',
 	"1,2011": 'Begin applying for summer internships. Have little luck.',
 	"2,2011": 'Now playing: You\'re the One That I Want by Angus & Julia Stone',
 	"3,2011": 'Music plays go down as work picks up.',
 	"4,2011": 'Reunite with my good friend Stacie Lackler, the only person I still talk to from my high school. She introduces me to Noah and the Whale.',
 	"5,2011": 'Start work at Dogpatch Films in San Francisco, where I spend half my time making their website and half my time holding a boom.',
-	"6,2011": 'Hour long bus commutes result in lots of Noah and the Whale.',
+	"6,2011": 'Anthem of the summer: <i>No Children</i> by The Mountain Goats.',
 	"7,2011": 'End my internship with an intense hatred for cross-browser compatibility.',
 	"8,2011": 'Return to Penn for sophomore year. Beirut\'s <i>The Rip Tide</i> is released and I listen to it nonstop.',
 	"9,2011": 'Meet the new freshman DMD class at a Halloween party.',
 	"10,2011": 'Compete in my first PennApps. We make "Pandora for beer".',
 	"11,2011": 'Spend a lot of time modeling the ship <i>Serenity</i> for 3D modeling. Smooth listening like Joe Hisaishi and Radical Face make a resurgence.',
 
-	"0,2012": 'Second PennApps.',
+	"0,2012": 'Spring semester of sophomore year starts. Hack in my second PennApps.',
 	"1,2012": 'Discover Walk off the Earth; listen to 3 of their covers a total of 180 combined times in one month.',
 	"2,2012": 'Now playing: Noah and the Whale',
-	"3,2012": 'I spend a lot of time trying to programmatically draw a cube on my screen in CIS 277. I spend all my time programming with Emancipator on in the background.',
+	"3,2012": 'I spend a lot of time trying to programmatically draw a cube on my screen in CIS 277. I spend all my time programming with Emancipator or Joe Hisaishi on in the background.',
 	"4,2012": 'Begin a software internship at Washington Post Labs. Work is a blast, but none of my music is on my work laptop. There\'s basically no data here because I used Pandora, which isn\'t linked to my last.fm account.',
 	"5,2012": 'Split my time between DC and Maryland. Of Monsters and Men reminds me of the DC metro.',
 	"6,2012": 'Begin semester abroad in Dunedin, New Zealand. Listens to Margot spike as my flatmate shows me an album of live recordings I haven\'t heard before.',
@@ -59,7 +59,7 @@ var stories = {
 	"9,2012": 'Spend the best 3 days of my life climbing and lazing in Wanaka. A couchsurfer named Henry sings a very good rendition of <i>Just A Boy</i> and rekindles my interest in Angus & Julia Stone.',
 	"10,2012": 'Backpacking the North and South islands. Joe Hisaishi and The Antlers help me fall asleep in hostels.',
 	"11,2012": 'Winter break. I listen to nothing but Radical Face and Lana Del Rey. No regrets.',
-	"0,2013": 'Spring semester begins at Penn.',
+	"0,2013": 'Spring semester of junior year begins at Penn.',
 };
 
 var visiblePopup;
@@ -134,7 +134,7 @@ vis.selectAll("path")
 		.on("click", onStreamClick);
 
 var seekLine = vis.append('line')
-	.attr("y1", height - 50)
+	.attr("y1", height)
 	.attr("y2", 0)
 	.attr("stroke-width", 1)
 	.attr("stroke", "#4557A3");
@@ -161,9 +161,11 @@ function seek(x, y) {
 	var h = $("#storyTooltip").outerHeight();
 	var w = $("#storyTooltip").outerWidth();
 	var yOffset = storyTooltipHeight;
+	var textAlign = "right";
 	// flip horizontal if too close to edge
 	if(x < w) {
 		w = 0;
+		textAlign = "left";
 	}
 	// flip vertical if too close to top
 	/*
@@ -176,7 +178,8 @@ function seek(x, y) {
 	storyPopup
 		.style("margin-left", (x - w - hoverOffset)+"px") 
 		.style("margin-top", (y - h - yOffset*3 - 1)+"px")
-		.style("display", "block");
+		.style("display", "block")
+		.style("text-align", textAlign);
 }
 
 function getMonthAndYear(x) {
@@ -192,9 +195,12 @@ function onStreamClick(d, i) {
 		clickedStream = d3.select(this);
 		d3.selectAll("path").style('display', 'none');
 		clickedStream.style('display', 'block');
+		//d3.selectAll("path").transition().style('opacity', '0.0', "important");
+		//clickedStream.style('opacity', '1.0');
 	}
 	else {
 		d3.selectAll("path").style('display', 'block');
+		//d3.selectAll("path").transition().style('opacity', '1.0');
 		clickedStream = null;	
 	}
 }
@@ -234,9 +240,11 @@ function renderArtistTooltip(x, y) {
 	var i = (date[1] - startYear) * 12 + date[0];
 	var plays = layers[artistIndex[lastHoveredArtistName]]["values"][i]["y"];
 
+	var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
 	// insert html
 	visiblePopup = d3.select("#artistTooltip")
-		.html('<div class="artist">' + lastHoveredArtistName + '<br>' + plays + ' plays' + '</div>')
+		.html('<div class="artist">' + lastHoveredArtistName + '<br>' + plays + ' plays during ' + months[date[0]] + ' ' + date[1] + '.</div>')
 		.style("min-height", tooltipHeight + "px")
 		.style("min-width", tooltipWidth + "px");
 
@@ -357,23 +365,31 @@ function pathMouseover(d, i) {
 
 function populateXAxis() {
 	var step = width / m;
-	var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+	//var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+	var months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
 
 	var month = 0;
 	var year = 2009;
 
-	var printMonth = true;
+	//var printMonth = true;
+	var monthAxis = d3.select('#month-axis');
 
 	for(var x = 0; x < width; x += step) {
 		vis.append('line')
 			.attr("x1", x)	
 			.attr("x2", x)
-			.attr("y1", height - 50)
+			.attr("y1", height)
 			.attr("y2", 0)
 			.attr("stroke-width", .7)
 			.attr("stroke", "#DBD5D7");
 
-		// print every other month
+		monthAxis.append('div')
+			.attr('class', 'date-div')
+			.html(months[month])
+			.style('width', step + 'px')
+		//printMonth = false;
+		/*
+		// print every other month directly to svg element
 		if(printMonth) {
 			vis.append('text')
 				.text(months[month])
@@ -384,9 +400,19 @@ function populateXAxis() {
 		else {
 			printMonth = true;
 		}
+		*/
 		month = (month + 1) % 12;
 	}
 
+	var yearStep = width / (49 / 12);  //width / number of years 
+	var yearAxis = d3.select('#year-axis');
+	for(year; year < 2013; year ++) {
+		yearAxis.append('div')
+			.html(year)
+			.style('width', yearStep + 'px');
+	}
+	// print years to svg element
+	/*
 	var yearStep = width / (49 / 12);  //width / number of years 
 	for(var x = 0; x < width; x += yearStep) {
 		vis.append('text')
@@ -396,4 +422,5 @@ function populateXAxis() {
 
 		year++;
 	}
+	*/
 }

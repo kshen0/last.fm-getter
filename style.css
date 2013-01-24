@@ -46,4 +46,23 @@ button {
 	margin: 10px 0 0 5px;
 }
 
+.axis {
+	text-align: center;
+	width: 3500px;
+	height: 15px;
+}
+
+#month-axis {
+	font-size: 10pt;
+}
+
+#month-axis div {
+	float: left;
+}
+
+#year-axis div {
+	font-size: 12pt;
+	float: left;
+}
+
 
