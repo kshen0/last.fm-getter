@@ -28,7 +28,7 @@ var stories = {
 	"4,2010": 'Graduate high school. Vitamin C tells me we will always be friends forever. Play a lot of video games with my friends; we are dubbed the \'HoN Team\'.',
 	"5,2010": 'Start rock climbing as a hobby. Hear about Mumford and Sons from a friend from Otis and think I\'m hip, then hear them a few weeks later at the climbing gym. Disappointed I\'m not hip.',
 	"6,2010": 'Start listening to Stars again. It took that long? That\'s embarassing. As Tall As Lions, a previous favorite, disappears from my listening history.',
-	"7,2010": 'Work up the courage to ask out the girl I like. A month before we go to college. Five hours apart.',
+	"7,2010": 'Summer draws to a close.',
 	"8,2010": 'Start at Penn as a Digital Media Design major. Listen to a lot of Arcade Fire the first week of classes.',
 	"9,2010": 'The month of concerts: I see Stars and Margot back to back, followed by Local Natives and Ingrid Michaelson two weeks later.', 
 	"10,2010": 'My friends agree Margot\'s new sound isn\'t as good as their first album; the most pretentious statement ever thought up by a couple of 18-year olds is made.',
