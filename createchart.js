@@ -3,19 +3,19 @@ $.ajaxSetup( {"async": false} );
 
 // load streamgraph layer data
 var layers = [];
-$.getJSON('./listens.json', function(data) {
+$.getJSON('./json/listens.json', function(data) {
 	layers = data;
 });
 
 // load mapping of songs to play
 var songs = {};
-$.getJSON('./songs.json', function(data) {
+$.getJSON('./json/songs.json', function(data) {
 	songs = data;
 });
 
 // load mapping of stories to month and year
 var stories = {};
-$.getJSON('stories.json', function(data) {
+$.getJSON('./json/stories.json', function(data) {
 	stories = data;
 });
 
@@ -37,6 +37,7 @@ var activeDate = null;
 var audioOn = true;
 var activeAudio = $("#audioplayer1");
 var inactiveAudio = $("#audioplayer2");
+var nowPlaying = "";
 
 // compute artist ranks
 for (var i = 0; i < layers.length; i++){ 
@@ -81,9 +82,14 @@ populateXAxis();
 // insert title
 vis.append('text')
 	//.text("the musical associations of kevin shen")
-	.text("the meaning of kevin shen's top 40")
+	.text("The Musical Nostalgia Machine")
 	.attr("x", 5).attr("y", 25)
 	.style('font-size', '18pt')
+vis.append('text')
+	//.text("the musical associations of kevin shen")
+	.text("associating my top 40 artists with the past 4 years of my life")
+	.attr("x", 5).attr("y", 60)
+	.style('font-size', '14pt')
 
 
 // populate graph
@@ -124,33 +130,31 @@ function seek(x, y) {
 		.attr("x2", x - hoverOffset);
 
 	var monthAndYear = getMonthAndYear(x).toString();
-
-/*
-	// entered into new month; change the song
-	if(monthAndYear != activeDate) {
-		console.log('new month');
-		// fade out old sound
-//			activeAudio.animate({volume: 0}, 1000);
-		activeDate = monthAndYear;
-
-		// play sound
-		var audio = songs[monthAndYear];
-		if(audio != null && audioOn) {
-			inactiveAudio.animate({volume: 100}, 3000);
-			inactiveAudio.html("<source src='./music/" + audio[0] + "' type='audio/mpeg'/>");
-			//activeAudio[0].play();
-			var temp = inactiveAudio;
-			inactiveAudio = activeAudio;
-			activeAudio = temp;
-		}
-	}
-	*/
 	var story = stories[monthAndYear];
 
-	storyPopup = d3.select("#storyTooltip")
-		.html(story)
+	// entered into new month; change the song
+	if(monthAndYear != activeDate) {
+		var audioplayer = $('#audioplayer1');
+		var audio = songs[monthAndYear];
+
+		// no audio to play
+		if (audio.length == 0) {
+			audioplayer[0].pause();
+			nowPlaying = "";
+		}
+		// play sound
+		else if(audioOn) {
+			activeDate = monthAndYear;
+			audioplayer.html("<source src='./music/" + audio[0] + "' type='audio/mpeg'/>");
+			audioplayer[0].play();
+			nowPlaying = "<br>Now playing: " + audio[1] + " by " + audio[2];
+		}
+	}
+	
+storyPopup = d3.select("#storyTooltip")
+		.html(story + nowPlaying)
 		.style("min-height", storyTooltipHeight + "px")
-		.style("width", storyTooltipWidth + "px")
+		.style("width", storyTooltipWidth + "px");
 
 	var h = $("#storyTooltip").outerHeight();
 	var w = $("#storyTooltip").outerWidth();
@@ -175,23 +179,6 @@ function seek(x, y) {
 		.style("display", "block")
 		.style("text-align", textAlign);
 
-	// entered into new month; change the song
-	if(monthAndYear != activeDate) {
-		var audioplayer = $('#audioplayer1');
-		var audio = songs[monthAndYear];
-
-		if (audio.length == 0) {
-			audioplayer[0].pause();
-			return;
-		}
-
-		activeDate = monthAndYear;
-		// play sound
-		if(audioOn) {
-			audioplayer.html("<source src='./music/" + audio[0] + "' type='audio/mpeg'/>");
-			audioplayer[0].play();
-		}
-	}
 }
 
 function getMonthAndYear(x) {
@@ -324,6 +311,7 @@ function toggleSound() {
 		$('#audioplayer1')[0].pause();
 		$('#soundbutton').attr("src", "./img/nosound.png");
 		audioOn = false;
+		nowPlaying = "";
 	}
 	else {
 		$('#audioplayer1')[0].play();
