@@ -26,15 +26,26 @@
 	<body>
 		<div class="popup" id="artistTooltip"></div>
 		<div class="popup" id="storyTooltip"></div>
+		<div id="title">
+			<h1>The Musical Nostalgia Machine</h1>
+		</div>
 		<div id="chart"></div>
 		<div class="axis" id="month-axis"></div>
 		<div class="axis" id="year-axis"></div>
 		<div id="info">
-			<a id="lastfm-link" href="http://www.last.fm/user/yellowJumpsuit">
-				<img src="./img/logo.png"></img>
-			</a>
-			<img id="soundbutton" src="./img/sound.png" onclick="toggleSound()"></img>
+			<!--<div class="popup" id="about-caption">-->
+			<div id="about-caption">
+				<p>Visualizing my listening habits for the last 4 years, and how they relate to events in my life.</p>
+				<p>My top 40 artists are represented in a streamgraph. Each stream represents one artist. Hover over a stream to see the number of plays for that artist in that month. Click a stream to hide other artists.</p>
+			</div>
+			<div id="aboutbox">
+				<img id="aboutbutton" src="./img/help.png" onclick="toggleAbout()"></img>
+				<img id="soundbutton" src="./img/sound.png" onclick="toggleSound()"></img>
+				<a id="lastfm-link" href="http://www.last.fm/user/yellowJumpsuit"><img src="./img/logo.png"></img>
+				</a>
+			</div>
 			<p>Inspired by Lee Byron's <a href="http://www.leebyron.com/what/lastfm/">Streamgraph</a></p>
+			<p>Built with <a href="http://d3js.org/">d3.js</a></p>
 		</div>
 		<audio id="audioplayer1" class="player" autoplay="autoplay" preload="none">
 		</audio>

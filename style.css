@@ -14,9 +14,13 @@ button {
 	top: 10px;
 }
 
-#soundbutton {
-	margin-left: 5px;
+
+#title {
+	position: absolute;
+	display: block;
+	margin: 10px 0 0 10px;
 }
+
 
 
 .popup {
@@ -39,19 +43,37 @@ button {
 	/*flex-direction: column-reverse;*/
 }
 
+#about-caption {
+	display: none;
+	text-align: left;
+	width: 60em;
+}
+
+#about-box {
+	overflow: auto;
+}
+
 .storyPopup {
 	position: absolute;
 }
 
 #info {
-	height: 100px;
 	width: 100%;
 	font-size: 10pt;
 	margin: 10px 0 0 5px;
 }
 
+#info img {
+	cursor: hand; 
+	cursor: pointer;
+	margin-left: 5px;
+}
+
+#info a {
+	text-decoration: none; 
+}
 #info #lastfm-link {
-	cursor: default;
+	border: 0;
 }
 
 .axis {

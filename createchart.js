@@ -38,6 +38,7 @@ var audioOn = true;
 var activeAudio = $("#audioplayer1");
 var inactiveAudio = $("#audioplayer2");
 var nowPlaying = "";
+var aboutVisible = false;
 
 // compute artist ranks
 for (var i = 0; i < layers.length; i++){ 
@@ -80,6 +81,7 @@ var vis = d3.select("#chart")
 populateXAxis();
 
 // insert title
+/*
 vis.append('text')
 	//.text("the musical associations of kevin shen")
 	.text("The Musical Nostalgia Machine")
@@ -90,6 +92,7 @@ vis.append('text')
 	.text("associating my top 40 artists with the past 4 years of my life")
 	.attr("x", 5).attr("y", 60)
 	.style('font-size', '14pt')
+*/
 
 
 // populate graph
@@ -317,5 +320,18 @@ function toggleSound() {
 		$('#audioplayer1')[0].play();
 		$('#soundbutton').attr("src", "./img/sound.png");
 		audioOn = true;
+	}
+}
+
+function toggleAbout() {
+	if(aboutVisible) {
+		//$('#about-caption').css("display", "none");
+		aboutVisible = false;
+		$("#about-caption").css("display", "none").appendTo($("body"));
+	}
+	else {
+		//$('#about-caption').css("display", "block");
+		$("#about-caption").css("display", "block").appendTo($("#aboutbox"));
+		aboutVisible = true;
 	}
 }
