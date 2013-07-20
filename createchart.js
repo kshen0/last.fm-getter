@@ -34,7 +34,7 @@ var startYear = 2009;
 var artistIndex = {};
 var lastHoveredArtistName;
 var activeDate = null;
-var audioOn = true;
+var audioOn = false; 
 var activeAudio = $("#audioplayer1");
 var inactiveAudio = $("#audioplayer2");
 var nowPlaying = "";
